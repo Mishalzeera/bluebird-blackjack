@@ -10,18 +10,23 @@
 <body>
       <section class="gamearea">
             <div class="cardsarea">
-                  <div class="cards">Cards</div>
-                  <div class="sum">Sum</div>
+                  <div class="cards">
+                        <p id="card1"></p>
+                        <p id="card2"></p>
+                  </div>
+                  <div class="sum"></div>
             </div>
             <div class="dealerarea">
                   <button class="btn" id="start">START GAME</button>
-                  <button class="btn" id="bet">BET</button>
+                  <button class="btn" id="bet" style="display: none;">BET</button>
                 
             </div>
       </section>
-      <section class="playerarea">
-            <p id="playername">Harry</p>
-            <p id="credit">500 Ruppees</p>
+      <section class="playerarea" style="display: none;">
+            <p id="playername"></p>
+            <p id="pot"></p>
+            <p id="credit"></p>
+            
             
       </section>
 

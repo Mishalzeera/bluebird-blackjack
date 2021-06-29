@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&display=swap');
+
 * {
       margin: 0;
       padding: 0;
@@ -5,13 +7,13 @@
 }
 
 body {
-      
+      background: rgb(3, 3, 78);
+      font-family: 'Libre Caslon Text', serif;
       height: 100vh;
 }
 
 .gamearea {
 
-      background: rgb(3, 3, 78);
       height: 85vh;
       text-align: center;
       display: flex;
@@ -30,6 +32,11 @@ body {
 
 .cards {
       height: 80%;
+      font-size: 3rem;
+      display: flex;
+      width: 100%;
+      justify-content: space-evenly;
+      align-items: center;
 }
 
 .sum {
@@ -38,8 +45,7 @@ body {
 
 .dealerarea {
       margin: 0 auto;
-      width: 70%;
-     border: 1px solid white;
+      width: 100%;
       height: 10vh;
       display: flex;
       align-items: center;
@@ -49,6 +55,7 @@ body {
 }
 
 .btn{
+      font-family: inherit;
       padding: 1rem 3rem;
       margin-left: 5px;
       background: ivory;
@@ -61,12 +68,25 @@ body {
       cursor: pointer;
 }
 
+#credit::after {
+      content: '£ credit';
+      font-size: .8rem;
+      margin-left: .5rem;
+}
+
+#pot::after {
+      content: '£ pot';
+      font-size: .8rem;
+      margin-left: .5rem;
+}
+
 .playerarea {
       color: ivory;
       background: black;
+      margin: 0 auto;
       height: 15vh;
       display: flex;
-      justify-content: space-evenly;
+      justify-content: space-around;
       align-items: center;
       font-size: 2.5rem;
 }
