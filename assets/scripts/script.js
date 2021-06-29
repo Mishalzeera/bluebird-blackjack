@@ -23,10 +23,10 @@ let betAmount = 10;
 
 function startGame(){
 
-      playerName = prompt('Welcome to the Bluebird Casino! Please enter your name.');
-      let nameDiv = document.querySelector('#playername');
-      if (!playerName) {nameDiv.textContent = "Player"} else
-      {nameDiv.textContent = playerName}
+      // playerName = prompt('Welcome to the Bluebird Casino! Please enter your name.');
+      // let nameDiv = document.querySelector('#playername');
+      // if (!playerName) {nameDiv.textContent = "Player"} else
+      // {nameDiv.textContent = playerName}
       
       gameOn = true;
 
@@ -82,9 +82,9 @@ function playBlackJack(){
 }
 
 function newCard(){
-      
+      let extraCard = Math.floor(Math.random() * 10 + 1);
       let sumDiv = document.querySelector('.sum')
-      sumDiv.textContent = `Your hand: ${sum += 5}`
+      sumDiv.textContent = `Your hand: ${sum += extraCard}`
       playBlackJack();
 
 }
