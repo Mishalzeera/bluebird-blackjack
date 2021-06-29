@@ -25,8 +25,9 @@ function startGame(){
 
       playerName = prompt('Welcome to the Bluebird Casino! Please enter your name.');
       let nameDiv = document.querySelector('#playername');
-      nameDiv.textContent = playerName;
-      if (playerName !== true) {nameDiv.textContent = "Player"}
+      if (!playerName) {nameDiv.textContent = "Player"} else
+      {nameDiv.textContent = playerName}
+      
       gameOn = true;
 
     startButton.textContent = "NEW CARD"
