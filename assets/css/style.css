@@ -21,7 +21,6 @@ body {
 
 .cardsarea {
       height: 100%;
-      border: 1px solid white;
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
@@ -38,19 +37,28 @@ body {
 }
 
 .dealerarea {
-     
+      margin: 0 auto;
+      width: 70%;
+     border: 1px solid white;
       height: 10vh;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-around;
       
       
 }
 
-#start {
+.btn{
       padding: 1rem 3rem;
+      margin-left: 5px;
       background: ivory;
       border: none;
+      transition: all 350ms ease-in-out;
+}
+
+.btn:hover {
+      opacity: .7;
+      cursor: pointer;
 }
 
 .playerarea {
