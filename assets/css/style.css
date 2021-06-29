@@ -11,7 +11,7 @@ body {
 
 .gamearea {
 
-      background: green;
+      background: rgb(3, 3, 78);
       height: 85vh;
       text-align: center;
       display: flex;
@@ -23,16 +23,18 @@ body {
       height: 100%;
       border: 1px solid white;
       display: flex;
+      flex-direction: column;
       justify-content: space-evenly;
       align-items: center;
+      color: ivory;
 }
 
 .cards {
-      width: 80%;
+      height: 80%;
 }
 
 .sum {
-      width: 20%;
+      height: 20%;
 }
 
 .dealerarea {
@@ -47,10 +49,13 @@ body {
 
 #start {
       padding: 1rem 3rem;
+      background: ivory;
+      border: none;
 }
 
 .playerarea {
-      background: goldenrod;
+      color: ivory;
+      background: black;
       height: 15vh;
       display: flex;
       justify-content: space-evenly;
