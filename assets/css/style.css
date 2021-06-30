@@ -42,6 +42,10 @@ body {
       align-items: center;
 }
 
+.yourcards {
+      width: 10%;
+}
+
 .sum,
 .opponent-sum {
       font-size: 1.2rem;

@@ -58,10 +58,15 @@ function playBlackJack(){
       secondCard = cards[Math.floor(Math.random() * cards.length)];
       
 
-      let card1 = document.querySelector('#card1');
-      card1.textContent = firstCard.value;
-    let card2 = document.querySelector('#card2');
-    card2.textContent = secondCard.value;
+//       let card1 = document.querySelector('#card1');
+//       card1.textContent = firstCard.value;
+//     let card2 = document.querySelector('#card2');
+//     card2.textContent = secondCard.value;
+
+    let cardimg1 = document.querySelector('#card1img')
+    let cardimg2 = document.querySelector('#card2img')
+    cardimg1.src = firstCard.src;
+    cardimg2.src = secondCard.src;
 
       sum = firstCard.value + secondCard.value;
 
