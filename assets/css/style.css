@@ -45,13 +45,17 @@ body {
 .yourcards {
       position: absolute;
       
-      width: 10%;
-      background: goldenrod;
+      width: 15%;
+     
       
 }
 
 .yourrightcard {
-      margin-left: 3rem;
+      margin-left: 5rem;
+}
+
+.yournextcard {
+      margin-left: 10rem;
 }
 
 .sum,
