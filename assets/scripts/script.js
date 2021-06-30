@@ -8,19 +8,24 @@ const stayButton = document.querySelector('#stay');
 stayButton.addEventListener('click', stayPlay)
 
 
+
 let firstCard;
 let secondCard;
-
 let sum; 
-
 let playerName = '';
 let dealerMessage = '';
 let gameOn = false;
 let blackJack = false;
 let startCredit = 50;
-let startPot = 10;
+let startPot = 0;
 let betAmount = 10;
 let opponentHand = [17, 18, 19, 20, 21];
+
+let currentCredit = document.querySelector('#credit');
+currentCredit.textContent = startCredit;
+
+  let currentPot = document.querySelector('#pot');
+  currentPot.textContent = startPot;
 
 
 
@@ -36,6 +41,7 @@ function startGame(){
       
       gameOn = true;
 
+
     startButton.textContent = "NEW CARD"
     startButton.removeEventListener('click', startGame)
     startButton.addEventListener('click', newCard);
@@ -44,7 +50,8 @@ function startGame(){
 
     stayButton.style.display = "block";
 
-    
+    currentCredit.textContent -= 10;
+    currentPot.textContent = parseInt(currentPot.textContent) + 20;
 
       playBlackJack()
 
@@ -71,11 +78,11 @@ function playBlackJack(){
     let playerDiv = document.querySelector('.playerarea');
     playerDiv.style.display = "flex";
 
-    let currentCredit = document.querySelector('#credit');
-    currentCredit.textContent = startCredit;
-
-      let currentPot = document.querySelector('#pot');
-      currentPot.textContent = startPot;
+    if (currentCredit.textContent === "0"){currentCredit.style.color = "red"; 
+    betButton.removeEventListener('click', placeBet)
+    ;
+} else if (currentCredit.textContent < "0") {endGame()}
+      else if (currentCredit.textContent >= "10") {currentCredit.style.color = "ivory"}
 
       checkCards();
 
@@ -127,14 +134,23 @@ function placeBet(){
 
      if (currentCredit.textContent === "0"){currentCredit.style.color = "red"; 
      betButton.removeEventListener('click', placeBet)
-     endGame();
+     ;
 }
      
       
 }
 
 function newRound(){
-      // alert('New round!')
+      startButton.textContent = "NEW CARD"
+    startButton.removeEventListener('click', newRound)
+    startButton.addEventListener('click', newCard);
+    
+    betButton.style.display = "block";
+
+    stayButton.style.display = "block";
+
+      
+    
 }
 
 function stayPlay(){
@@ -145,7 +161,8 @@ function stayPlay(){
 }
 
 function endGame(){
-      alert('you lose')
+      alert('The manager has asked you to leave.');
+      location.reload();
 }
 
 function youWin(){
@@ -153,6 +170,17 @@ function youWin(){
       let currentPot = document.querySelector('#pot');
       currentCredit.textContent = parseInt(currentCredit.textContent) + parseInt(currentPot.textContent);
       currentPot.textContent = 0;
+
+      startButton.textContent = "OK"
+      startButton.removeEventListener('click', newCard)
+      startButton.addEventListener('click', refreshAll);
+      
+      betButton.style.display = "none";
+  
+      stayButton.style.display = "none";
+
+      let opponent = document.querySelector('.opponent-sum');
+      opponent.textContent = '';
       
 }
 
@@ -161,7 +189,54 @@ function youLose(){
       let currentPot = document.querySelector('#pot');
       currentPot.textContent = "0";
 
-      if (currentCredit === 0){endGame()} else {newRound();}
+      // if (currentCredit === 0){endGame()} else {newRound();}
+
+      startButton.textContent = "OK"
+    startButton.removeEventListener('click', newCard)
+    startButton.addEventListener('click', refreshAll);
+    
+    betButton.style.display = "none";
+
+    stayButton.style.display = "none";
+
+    let opponent = document.querySelector('.opponent-sum');
+    opponent.textContent = '';
+
+
+
+    
 
 }
 
+function refreshAll(){
+
+      let cardimg1 = document.querySelector('#card1img')
+    let cardimg2 = document.querySelector('#card2img')
+    let newCardImg = document.querySelector('#nextcardimg');
+    cardimg1.src = ''
+    cardimg2.src = ''
+    
+    newCardImg.src = ''
+
+    let dealer = document.querySelector('.dealer-message')
+    dealer.textContent = '';
+
+    let sumDiv = document.querySelector('.sum')
+    sumDiv.textContent = ``
+
+    startButton.textContent = "NEXT ROUND"
+    startButton.removeEventListener('click', refreshAll);
+    startButton.addEventListener('click', startGame)
+    
+}
+
+// function opponentGame(){
+//       let firstCardOpponent = cards[Math.floor(Math.random() * cards.length)];
+//       let secondCardOpponent = cards[Math.floor(Math.random() * cards.length)];
+//       let firstOpponentCalc = firstCardOpponent.value + secondCardOpponent.value;
+
+//       if (firstOpponentCalc < 16) { return firstOpponentCalc + 8}
+//       else if (firstOpponentCalc < 20) {return firstOpponentCalc + 2}
+//       else if (firstOpponentCalc > 21) {return youWin()}
+            
+// }
