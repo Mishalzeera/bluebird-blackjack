@@ -19,6 +19,11 @@ let blackJack = false;
 let startCredit = 50;
 let startPot = 10;
 let betAmount = 10;
+let opponentHand = [17, 18, 19, 20, 21];
+
+
+
+
 
 
 function startGame(){
@@ -100,6 +105,8 @@ function placeBet(){
 }
 
 function stayPlay(){
-      console.log('stay!')
+      let opponent = document.querySelector('.opponent-sum');
+      opponent.style.display = "block";
+      opponent.textContent = "Your opponents hand: 18";
 }
 

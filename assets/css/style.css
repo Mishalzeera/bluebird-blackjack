@@ -42,12 +42,18 @@ body {
       align-items: center;
 }
 
-.sum {
+.sum,
+.opponent-sum {
       font-size: 1.2rem;
       font-weight: 700;
       height: 20%;
       letter-spacing: 3px;
 }
+.opponent-sum {
+      height: unset;
+      margin-bottom: 2rem;
+}
+
 
 .dealer-message {
       font-size: 1.3rem;
