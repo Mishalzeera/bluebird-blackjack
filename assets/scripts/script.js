@@ -7,10 +7,11 @@ betButton.addEventListener('click', placeBet);
 const stayButton = document.querySelector('#stay');
 stayButton.addEventListener('click', stayPlay)
 
-let firstCard = Math.floor(Math.random() * 10 + 1);
-let secondCard = Math.floor(Math.random() * 10 + 1);
 
-let sum = firstCard + secondCard;
+let firstCard;
+let secondCard;
+
+let sum; 
 
 let playerName = '';
 let dealerMessage = '';
@@ -53,10 +54,16 @@ function startGame(){
 
 function playBlackJack(){
 
+      firstCard = cards[Math.floor(Math.random() * cards.length)];
+      secondCard = cards[Math.floor(Math.random() * cards.length)];
+      
+
       let card1 = document.querySelector('#card1');
-      card1.textContent = firstCard;
+      card1.textContent = firstCard.value;
     let card2 = document.querySelector('#card2');
-    card2.textContent = secondCard;
+    card2.textContent = secondCard.value;
+
+      sum = firstCard.value + secondCard.value;
 
       let sumDiv = document.querySelector('.sum')
       sumDiv.textContent = `Your hand: ${sum}`
@@ -69,9 +76,15 @@ function playBlackJack(){
 
       let currentPot = document.querySelector('#pot');
       currentPot.textContent = startPot;
+
+      checkCards();
+
+}
+
+function checkCards(){
       let dealer = document.querySelector('.dealer-message')
 
-      if (sum < 20) {
+      if (sum <= 20) {
             dealer.textContent = "Would you like to stay, or would you like another card?"
             
       }
@@ -80,17 +93,21 @@ function playBlackJack(){
             blackJack = true;
             
       }
-      else if (sum > 21) {
+      else {
             dealer.textContent = "Sorry, you lose this round.";
-            
+           
+      
 }
 }
 
+
 function newCard(){
-      let extraCard = Math.floor(Math.random() * 10 + 1);
-      let sumDiv = document.querySelector('.sum')
-      sumDiv.textContent = `Your hand: ${sum += extraCard}`
-      playBlackJack();
+      let extraCard = cards[Math.floor(Math.random() * cards.length)];
+      let sumDiv = document.querySelector('.sum');
+      sum += extraCard.value;
+      sumDiv.textContent = `Your hand: ${sum}`
+
+      checkCards();
 
 }
 
@@ -98,9 +115,16 @@ function placeBet(){
       
       let currentCredit = document.querySelector('#credit');
     currentCredit.textContent -= betAmount;
+    
 
     let currentPot = document.querySelector('#pot'); 
      currentPot.textContent = parseInt(currentPot.textContent) + (betAmount * 2);
+
+     if (currentCredit.textContent === "0"){currentCredit.style.color = "red"; 
+     betButton.removeEventListener('click', placeBet)
+     endGame();
+}
+     
       
 }
 
@@ -110,3 +134,6 @@ function stayPlay(){
       opponent.textContent = "Your opponents hand: 18";
 }
 
+function endGame(){
+      console.log('you lose')
+}
