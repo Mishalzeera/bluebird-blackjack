@@ -179,6 +179,8 @@ function stayPlay(){
       let opponent = document.querySelector('.opponent-sum');
       opponent.style.display = "block";
       opponent.textContent = `Your opponents hand: ${opponentGame()}`;
+
+      compareSums();
       
 }
 
@@ -204,6 +206,10 @@ function youWin(){
       let opponent = document.querySelector('.opponent-sum');
       opponent.textContent = '';
 
+      let dealer = document.querySelector('.dealer-message');
+
+      if (blackJack === true) {dealer.textContent = 'You got Blackjack!'} else
+      {dealer.textContent = 'You win this round.'};
       
       
 }
@@ -212,8 +218,6 @@ function youLose(){
       let currentCredit = document.querySelector('#credit');
       let currentPot = document.querySelector('#pot');
       currentPot.textContent = "0";
-
-      // if (currentCredit === 0){endGame()} else {newRound();}
 
       startButton.textContent = "OK"
     startButton.removeEventListener('click', newCard)
@@ -226,7 +230,9 @@ function youLose(){
     let opponent = document.querySelector('.opponent-sum');
     opponent.textContent = '';
 
+    let dealer = document.querySelector('.dealer-message');
 
+    dealer.textContent = 'You lose this round.';
 
     
 
@@ -268,6 +274,10 @@ function opponentGame(){
       return opponentSum;
       
             
+}
+
+function compareSums(){
+ if (sum > opponentGame()){youWin(); console.log('you win')}else{youLose(); console.log('you lose')}
 }
 
 function endGame(){
