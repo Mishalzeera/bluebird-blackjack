@@ -7,7 +7,10 @@
 }
 
 body {
-      background: rgb(3, 3, 78);
+      background-color: rgb(3, 3, 78);
+      background-image: url('../imgs/bg-tiled-png/vintage-wallpaper.png');
+      
+      background-blend-mode: hue;
       font-family: 'Libre Caslon Text', serif;
       height: 100vh;
 }
@@ -52,9 +55,13 @@ body {
 }
 
 .dealerarea {
+      background:rgb(2, 2, 61);
+      background-image: url('../imgs/bg-tiled-png/vintage-blue-bird-clipart-vintage-bluebird-png-1932_2318.png');
+      background-size:contain;
+      background-blend-mode:saturation;
       margin: 0 auto;
       width: 100%;
-      height: 10vh;
+      height: 12vh;
       display: flex;
       align-items: center;
       justify-content: space-around;
@@ -63,10 +70,12 @@ body {
 }
 
 .btn{
+      background: ivory;
+      
       font-family: inherit;
       padding: 1rem 3rem;
       margin-left: 5px;
-      background: ivory;
+      
       border: none;
       transition: all 350ms ease-in-out;
 }
