@@ -1,5 +1,7 @@
+
+
 const startButton = document.querySelector('#start');
-startButton.addEventListener('click', startGame);
+startButton.addEventListener('click', initGame);
 
 const betButton = document.querySelector('#bet');
 betButton.addEventListener('click', placeBet);
@@ -27,17 +29,21 @@ currentCredit.textContent = startCredit;
   let currentPot = document.querySelector('#pot');
   currentPot.textContent = startPot;
 
+function initGame(){
+      startButton.removeEventListener('click', initGame)
+      startButton.addEventListener('click', startGame);
 
+      playerName = prompt('Welcome to the Bluebird Casino, Your Excellency. May we take your coat? How should we refer to your good self?');
+      let nameDiv = document.querySelector('#playername');
+      if (!playerName) {nameDiv.textContent = "Player"} else
+      {nameDiv.textContent = playerName}
 
-
-
+      startGame()
+}
 
 function startGame(){
 
-      // playerName = prompt('Welcome to the Bluebird Casino! Please enter your name.');
-      // let nameDiv = document.querySelector('#playername');
-      // if (!playerName) {nameDiv.textContent = "Player"} else
-      // {nameDiv.textContent = playerName}
+    
       
       gameOn = true;
 
@@ -57,8 +63,6 @@ function startGame(){
 
 }
 
-
-
 function playBlackJack(){
 
       firstCard = cards[Math.floor(Math.random() * cards.length)];
@@ -70,7 +74,11 @@ function playBlackJack(){
     cardimg1.src = firstCard.src;
     cardimg2.src = secondCard.src;
 
-      sum = firstCard.value + secondCard.value;
+      
+
+      if (firstCard.altValue === 11 && secondCard.value === 10){sum = firstCard.altValue + secondCard.value; blackJack = true;}
+      else if (firstCard.value === 10 && secondCard.altValue === 11) {sum = firstCard.value + secondCard.altValue; blackJack = true;}
+      else {sum = firstCard.value + secondCard.value;};
 
       let sumDiv = document.querySelector('.sum')
       sumDiv.textContent = `Your hand: ${sum}`
@@ -91,6 +99,8 @@ function playBlackJack(){
 function checkCards(){
       let dealer = document.querySelector('.dealer-message')
 
+
+
       if (sum <= 20) {
             dealer.textContent = "Would you like to stay, or would you like another card?"
             
@@ -108,7 +118,6 @@ function checkCards(){
       
 }
 }
-
 
 function newCard(){
       let extraCard = cards[Math.floor(Math.random() * cards.length)];
@@ -160,16 +169,16 @@ function stayPlay(){
       opponent.textContent = "Your opponents hand: 18";
 }
 
-function endGame(){
-      alert('The manager has asked you to leave.');
-      location.reload();
-}
-
 function youWin(){
       let currentCredit = document.querySelector('#credit');
       let currentPot = document.querySelector('#pot');
-      currentCredit.textContent = parseInt(currentCredit.textContent) + parseInt(currentPot.textContent);
-      currentPot.textContent = 0;
+
+      if (blackJack === true) {
+            currentCredit.textContent = parseInt(currentCredit.textContent) + parseInt(currentPot.textContent) * 2 + 100;
+            currentPot.textContent = 0;
+      } else { currentCredit.textContent = parseInt(currentCredit.textContent) + parseInt(currentPot.textContent);
+            currentPot.textContent = 0;}
+      
 
       startButton.textContent = "OK"
       startButton.removeEventListener('click', newCard)
@@ -181,6 +190,8 @@ function youWin(){
 
       let opponent = document.querySelector('.opponent-sum');
       opponent.textContent = '';
+
+      
       
 }
 
@@ -240,3 +251,8 @@ function refreshAll(){
 //       else if (firstOpponentCalc > 21) {return youWin()}
             
 // }
+
+function endGame(){
+      alert('The manager has asked you to leave.');
+      location.reload();
+}
