@@ -75,9 +75,12 @@ function playBlackJack(){
     cardimg2.src = secondCard.src;
 
       
+      if (firstCard.altValue === 11 && firstCard.altValue + secondCard.value <= 21){sum = firstCard.altValue + secondCard.value}
+      else if (secondCard.altValue === 11 && firstCard.value + secondCard.altValue <= 21){sum = secondCard.altValue + firstCard.value}
 
-      if (firstCard.altValue === 11 && secondCard.value === 10){sum = firstCard.altValue + secondCard.value; blackJack = true;}
+      else if (firstCard.altValue === 11 && secondCard.value === 10){sum = firstCard.altValue + secondCard.value; blackJack = true;}
       else if (firstCard.value === 10 && secondCard.altValue === 11) {sum = firstCard.value + secondCard.altValue; blackJack = true;}
+      
       else {sum = firstCard.value + secondCard.value;};
 
       let sumDiv = document.querySelector('.sum')
@@ -122,7 +125,14 @@ function checkCards(){
 function newCard(){
       let extraCard = cards[Math.floor(Math.random() * cards.length)];
       let sumDiv = document.querySelector('.sum');
-      sum += extraCard.value;
+
+
+
+      if (extraCard.altValue === 11 && extraCard.altValue + sum <= 21 ) {sum += 11}
+      else {sum += extraCard.value;}
+
+      // Aces are counted as 11 when this would not make the total more than 21.
+      
       sumDiv.textContent = `Your hand: ${sum}`
 
     let newCardImg = document.querySelector('#nextcardimg');
