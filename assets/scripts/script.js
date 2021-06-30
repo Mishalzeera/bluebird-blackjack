@@ -173,10 +173,13 @@ function newRound(){
 }
 
 function stayPlay(){
-     
+
+      // Uses opponentGame function to calculate a virtual game that is then compared to Players sum value
+
       let opponent = document.querySelector('.opponent-sum');
       opponent.style.display = "block";
-      opponent.textContent = "Your opponents hand: 18";
+      opponent.textContent = `Your opponents hand: ${opponentGame()}`;
+      
 }
 
 function youWin(){
@@ -251,16 +254,21 @@ function refreshAll(){
     
 }
 
-// function opponentGame(){
-//       let firstCardOpponent = cards[Math.floor(Math.random() * cards.length)];
-//       let secondCardOpponent = cards[Math.floor(Math.random() * cards.length)];
-//       let firstOpponentCalc = firstCardOpponent.value + secondCardOpponent.value;
+function opponentGame(){
+      let firstCardOpponent = cards[Math.floor(Math.random() * cards.length)];
+      let secondCardOpponent = cards[Math.floor(Math.random() * cards.length)];
+      let firstOpponentCalc = firstCardOpponent.value + secondCardOpponent.value;
 
-//       if (firstOpponentCalc < 16) { return firstOpponentCalc + 8}
-//       else if (firstOpponentCalc < 20) {return firstOpponentCalc + 2}
-//       else if (firstOpponentCalc > 21) {return youWin()}
+      let opponentSum = firstOpponentCalc; 
+
+      if (firstOpponentCalc < 16) { opponentSum += 5}
+      else if (firstOpponentCalc < 20) {opponentSum += 2}
+      else if (firstOpponentCalc === 21) {youLose()}
+      console.log(opponentSum);
+      return opponentSum;
+      
             
-// }
+}
 
 function endGame(){
       alert('The manager has asked you to leave.');
