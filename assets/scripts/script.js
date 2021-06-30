@@ -91,10 +91,12 @@ function checkCards(){
       else if (sum === 21) {
             dealer.textContent = "You've got Blackjack!"
             blackJack = true;
+            youWin();
             
       }
       else {
             dealer.textContent = "Sorry, you lose this round.";
+            youLose();
            
       
 }
@@ -128,12 +130,35 @@ function placeBet(){
       
 }
 
+function newRound(){
+      // alert('New round!')
+}
+
 function stayPlay(){
+     
       let opponent = document.querySelector('.opponent-sum');
       opponent.style.display = "block";
       opponent.textContent = "Your opponents hand: 18";
 }
 
 function endGame(){
-      console.log('you lose')
+      alert('you lose')
 }
+
+function youWin(){
+      let currentCredit = document.querySelector('#credit');
+      let currentPot = document.querySelector('#pot');
+      currentCredit.textContent = parseInt(currentCredit.textContent) + parseInt(currentPot.textContent);
+      currentPot.textContent = 0;
+      
+}
+
+function youLose(){    
+      let currentCredit = document.querySelector('#credit');
+      let currentPot = document.querySelector('#pot');
+      currentPot.textContent = "0";
+
+      if (currentCredit === 0){endGame()} else {newRound();}
+
+}
+
