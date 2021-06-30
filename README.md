@@ -1,6 +1,6 @@
 # Bluebird Blackjack 
 
-A simple blackjack game with custom cards and media. 
+A simple blackjack game with cards and media. Styled according to a vintage Raj/colonial era look.
 
 ## The user
 
@@ -8,5 +8,6 @@ The user is the kind of person who wants a quick, handy game on their phone to p
 
 ## What Bluebird Blackjack offers
 
+A more aesthetic experience of a common game. 
 
 
