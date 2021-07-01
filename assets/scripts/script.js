@@ -34,9 +34,9 @@ const opponentPlayers = [
             src: "assets/imgs/opponents/colonel.png"
       },
       {
-            name: "Offduty Waiter",
+            name: "Offduty Waitress",
             skill: 1,
-            src: "assets/imgs/opponents/off-duty-waiter.png"
+            src: "assets/imgs/opponents/waitress.png"
       }
 ]
 
@@ -71,7 +71,7 @@ function initGame(){
       let opponentImgDiv = document.querySelector('#opp')
       opponentImgDiv.src = newOpponent.src
       let opponentSkillDiv = document.querySelector('#skill')
-      opponentSkillDiv.textContent = "Your opponent: " + newOpponent.name + "| Skill: " + newOpponent.skill
+      opponentSkillDiv.textContent = "Your opponent: " + newOpponent.name + " | Skill: " + newOpponent.skill
   
 
       startGame()
@@ -142,7 +142,7 @@ function checkCards(){
 
 
       if (sum <= 20) {
-            dealer.textContent = "Would you like to stay, or would you like another card?"
+            dealer.textContent = "Choose your next move."
             
       }
       else if (sum === 21) {
@@ -205,7 +205,13 @@ function newRound(){
 
     stayButton.style.display = "block";
 
-      
+      if (currentCredit.textContent === 500){
+            let newOpponent = opponentPlayers[Math.floor(Math.random() * opponentPlayers.length)]
+      let opponentImgDiv = document.querySelector('#opp')
+      opponentImgDiv.src = newOpponent.src
+      let opponentSkillDiv = document.querySelector('#skill')
+      opponentSkillDiv.textContent = "Your opponent: " + newOpponent.name + " | Skill: " + newOpponent.skill
+      }
     
 }
 
