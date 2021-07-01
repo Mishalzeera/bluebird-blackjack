@@ -95,6 +95,8 @@ function startGame(){
     currentCredit.textContent -= 10;
     currentPot.textContent = parseInt(currentPot.textContent) + 20;
 
+    let opponentDiv = document.querySelector('.opponent');
+    opponentDiv.style.display = "block";
    
       playBlackJack()
 
