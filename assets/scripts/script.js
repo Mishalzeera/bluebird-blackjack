@@ -9,34 +9,52 @@ stayButton.addEventListener('click', stayPlay)
 
 const opponentPlayers = [
       {
-            name: "Mrs. Cheng",
+            name: "The Mysterious Mrs. Cheng",
             skill: 2,
-            src: "assets/imgs/opponents/mrs-cheng.png"
+            src: "assets/imgs/opponents/mrs-cheng.png",
+            greeting: "",
+            gloating: "",
+            angerfail: ""
       },
       {
-            name: "Dr. Mischa Olyavetch",
+            name: "The Esteemed Dr. Mischa Olyavetch",
             skill: 3,
-            src: "assets/imgs/opponents/dr-mischa.png"
+            src: "assets/imgs/opponents/dr-mischa.png",
+            greeting: "",
+            gloating: "",
+            angerfail: ""
       },
       {
-            name: "Sheikh Yousif bin Ahmed bin Salman",
+            name: "Sheikh Jaber bin Ahmed bin Salman",
             skill: 1,
-            src: "assets/imgs/opponents/the-sheikh.png"
+            src: "assets/imgs/opponents/the-sheikh.png",
+            greeting: "",
+            gloating: "",
+            angerfail: ""
       },
       {
-            name: "Lucy Evans",
+            name: "The Young American Miss Lucy Evans",
             skill: 3,
-            src: "assets/imgs/opponents/lucy.png"
+            src: "assets/imgs/opponents/lucy.png",
+            greeting: "",
+            gloating: "",
+            angerfail: ""
       },
       {
-            name: "Colonel Enrique Diaz Firpi III",
+            name: "His Excellency The Colonel Enrique Diaz Firpi III",
             skill: 2,
-            src: "assets/imgs/opponents/colonel.png"
+            src: "assets/imgs/opponents/colonel.png",
+            greeting: "",
+            gloating: "",
+            angerfail: ""
       },
       {
-            name: "Offduty Waitress",
+            name: "Dame Emily Holz-Wilkinson",
             skill: 1,
-            src: "assets/imgs/opponents/waitress.png"
+            src: "assets/imgs/opponents/waitress.png",
+            greeting: "",
+            gloating: "",
+            angerfail: ""
       }
 ]
 
