@@ -5,24 +5,28 @@ const cards = [
             src: baseSrc + "2C.png",
             value: 2,
             suit: "clubs"
+           
 
       },
       {
             src: baseSrc + "2D.png",
             value: 2,
             suit: "diamonds"
+            
 
       },
       {
             src: baseSrc + "2H.png",
             value: 2,
             suit: "hearts"
+           
 
       },
       {
             src: baseSrc + "2S.png",
             value: 2,
             suit: "spades"
+            
 
       },
 
@@ -31,24 +35,28 @@ const cards = [
             src: baseSrc + "3C.png",
             value: 3,
             suit: "clubs"
+           
 
       },
       {
             src: baseSrc + "3D.png",
             value: 3,
             suit: "diamonds"
+           
 
       },
       {
             src: baseSrc + "3H.png",
             value: 3,
             suit: "hearts"
+           
 
       },
       {
             src: baseSrc + "3S.png",
             value: 3,
             suit: "spades"
+           
 
       },
       
@@ -57,6 +65,7 @@ const cards = [
             src: baseSrc + "4C.png",
             value: 4,
             suit: "clubs"
+            
 
       },
       {

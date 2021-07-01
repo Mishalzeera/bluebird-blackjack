@@ -38,8 +38,24 @@ body {
       font-size: 3rem;
       display: flex;
       width: 100%;
-      justify-content: space-evenly;
+      justify-content: center;
       align-items: center;
+}
+
+.yourcards {
+      position: absolute;
+      
+      width: 15%;
+     
+      
+}
+
+.yourrightcard {
+      margin-left: 5rem;
+}
+
+.yournextcard {
+      margin-left: 10rem;
 }
 
 .sum,
