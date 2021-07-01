@@ -70,7 +70,25 @@ body {
       margin-bottom: 2rem;
 }
 
+.opponent {
+      position: absolute;
+      left: 5vw;
+      bottom: 35vh;
+    font-size: .8rem;
+      text-align: center;
+}
 
+
+#opp {
+      width: 90px;
+      border-radius: 50%;
+}
+
+
+
+#skill {
+      margin: 1rem;
+}
 .dealer-message {
       font-size: 1.3rem;
       margin-bottom: 2rem;

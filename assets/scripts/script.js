@@ -1,5 +1,3 @@
-
-
 const startButton = document.querySelector('#start');
 startButton.addEventListener('click', initGame);
 
@@ -9,7 +7,38 @@ betButton.addEventListener('click', placeBet);
 const stayButton = document.querySelector('#stay');
 stayButton.addEventListener('click', stayPlay)
 
-
+const opponentPlayers = [
+      {
+            name: "Mrs. Cheng",
+            skill: 2,
+            src: "assets/imgs/opponents/mrs-cheng.png"
+      },
+      {
+            name: "Dr. Mischa Olyavetch",
+            skill: 3,
+            src: "assets/imgs/opponents/dr-mischa.png"
+      },
+      {
+            name: "Sheikh Yousif bin Ahmed bin Salman",
+            skill: 1,
+            src: "assets/imgs/opponents/the-sheikh.png"
+      },
+      {
+            name: "Lucy Evans",
+            skill: 3,
+            src: "assets/imgs/opponents/lucy.png"
+      },
+      {
+            name: "Colonel Enrique Diaz Firpi III",
+            skill: 2,
+            src: "assets/imgs/opponents/colonel.png"
+      },
+      {
+            name: "Offduty Waiter",
+            skill: 1,
+            src: "assets/imgs/opponents/off-duty-waiter.png"
+      }
+]
 
 let firstCard;
 let secondCard;
@@ -38,6 +67,13 @@ function initGame(){
       if (!playerName) {nameDiv.textContent = "Player"} else
       {nameDiv.textContent = playerName}
 
+      let newOpponent = opponentPlayers[Math.floor(Math.random() * opponentPlayers.length)]
+      let opponentImgDiv = document.querySelector('#opp')
+      opponentImgDiv.src = newOpponent.src
+      let opponentSkillDiv = document.querySelector('#skill')
+      opponentSkillDiv.textContent = "Your opponent: " + newOpponent.name + "| Skill: " + newOpponent.skill
+  
+
       startGame()
 }
 
@@ -59,6 +95,7 @@ function startGame(){
     currentCredit.textContent -= 10;
     currentPot.textContent = parseInt(currentPot.textContent) + 20;
 
+   
       playBlackJack()
 
 }
