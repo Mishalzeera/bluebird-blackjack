@@ -150,7 +150,7 @@ function playBlackJack(){
     betButton.removeEventListener('click', placeBet)
     ;
 } else if (currentCredit.textContent < "0") {endGame()}
-      else if (currentCredit.textContent >= "10") {currentCredit.style.color = "ivory"}
+      else if (currentCredit.textContent >= "10") {currentCredit.style.color = "ivory"; betButton.addEventListener('click', placeBet)}
 
       checkCards();
 
@@ -210,11 +210,11 @@ function placeBet(){
 
      if (currentCredit.textContent === "0"){currentCredit.style.color = "red"; 
      betButton.removeEventListener('click', placeBet)
-     ;
+     } else if (currentCredit.textContent > "0") {currentCredit.style.color = "ivory"; betButton.addEventListener('click', placeBet)}
 }
      
       
-}
+
 
 function newRound(){
       startButton.textContent = "NEW CARD"
