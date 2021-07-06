@@ -220,7 +220,7 @@ function playBlackJack(){
 function checkCards(){
       let dealer = document.querySelector('.dealer-message')
 
-
+// Sets initial logic for hand after dealing
 
       if (sum <= 20) {
             dealer.textContent = "Choose your next move."
@@ -243,11 +243,16 @@ function checkCards(){
 }
 }
 
+// Logic for getting new card
+
 function newCard(){
+      // Card drawn randomly from the array
+
       let extraCard = cards[Math.floor(Math.random() * cards.length)];
       let sumDiv = document.querySelector('.sum');
 
 
+// Making sure the correct interpretation of the Ace happens
 
       if (extraCard.altValue === 11 && extraCard.altValue + sum <= 21 ) {sum += 11}
       else {sum += extraCard.value;}
