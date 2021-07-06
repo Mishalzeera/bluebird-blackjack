@@ -12,52 +12,53 @@ const opponentPlayers = [
             name: "The Mysterious Mrs. Cheng",
             skill: 2,
             src: "assets/imgs/opponents/mrs-cheng.png",
-            greeting: "",
-            gloating: "",
-            angerfail: ""
+            greeting: "assets/audio/voices/mrs-cheng-greeting.mp3",
+            gloating: "assets/audio/voices/mrs-cheng-gloating.mp3",
+            angerfail: "assets/audio/voices/mrs-cheng-angerfail.mp3"
       },
       {
             name: "The Esteemed Dr. Mischa Olyavetch",
             skill: 3,
             src: "assets/imgs/opponents/dr-mischa.png",
-            greeting: "",
-            gloating: "",
-            angerfail: ""
+            greeting: "assets/audio/voices/drmischa-greeting.mp3",
+            gloating: "assets/audio/voices/drmischa-gloating.mp3",
+            angerfail: "assets/audio/voices/drmischa-angerfail.mp3"
       },
       {
             name: "Sheikh Jaber bin Ahmed bin Salman",
             skill: 1,
             src: "assets/imgs/opponents/the-sheikh.png",
-            greeting: "",
-            gloating: "",
-            angerfail: ""
+            greeting: "assets/audio/voices/sheikh-greeting.mp3",
+            gloating: "assets/audio/voices/sheikh-gloating.mp3",
+            angerfail: "assets/audio/voices/sheikh-angerfail.mp3"
       },
       {
             name: "The Young American Miss Lucy Evans",
             skill: 3,
             src: "assets/imgs/opponents/lucy.png",
-            greeting: "",
-            gloating: "",
-            angerfail: ""
+            greeting: "assets/audio/voices/american-greeting.mp3",
+            gloating: "assets/audio/voices/american-gloating.mp3",
+            angerfail: "assets/audio/voices/american-angerfail.mp3"
       },
       {
             name: "His Excellency The Colonel Enrique Diaz Firpi III",
             skill: 2,
             src: "assets/imgs/opponents/colonel.png",
-            greeting: "",
-            gloating: "",
-            angerfail: ""
+            greeting: "assets/audio/voices/enrique-greeting.mp3",
+            gloating: "assets/audio/voices/enrique-gloating.mp3",
+            angerfail: "assets/audio/voices/enrique-angerfail.mp3"
       },
       {
             name: "Dame Emily Holz-Wilkinson",
             skill: 1,
             src: "assets/imgs/opponents/waitress.png",
-            greeting: "",
-            gloating: "",
-            angerfail: ""
+            greeting: "assets/audio/voices/dame-greeting.mp3",
+            gloating: "assets/audio/voices/dame-gloating.mp3",
+            angerfail: "assets/audio/voices/dame-angerfail.mp3"
       }
 ]
 
+let newOpponent;
 let firstCard;
 let secondCard;
 let sum; 
@@ -73,7 +74,7 @@ let opponentHand = [17, 18, 19, 20, 21];
 let currentCredit = document.querySelector('#credit');
 currentCredit.textContent = startCredit;
 
-  let currentPot = document.querySelector('#pot');
+let currentPot = document.querySelector('#pot');
   currentPot.textContent = startPot;
 
 function initGame(){
@@ -85,11 +86,14 @@ function initGame(){
       if (!playerName) {nameDiv.textContent = "Player"} else
       {nameDiv.textContent = playerName}
 
-      let newOpponent = opponentPlayers[Math.floor(Math.random() * opponentPlayers.length)]
+      newOpponent = opponentPlayers[Math.floor(Math.random() * opponentPlayers.length)]
       let opponentImgDiv = document.querySelector('#opp')
       opponentImgDiv.src = newOpponent.src
       let opponentSkillDiv = document.querySelector('#skill')
       opponentSkillDiv.textContent = "Your opponent: " + newOpponent.name + " | Skill: " + newOpponent.skill
+      let opponentGreeting = new Audio(newOpponent.greeting);
+      opponentGreeting.play();
+      
   
 
       startGame()
@@ -169,12 +173,15 @@ function checkCards(){
             dealer.textContent = "You've got Blackjack!"
             blackJack = true;
             youWin();
+            let opponentAngerfail = new Audio(newOpponent.angerfail);
+            opponentAngerfail.play();
             
       }
       else {
             dealer.textContent = "Sorry, you lose this round.";
             youLose();
-           
+            let opponentGloating = new Audio(newOpponent.gloating);
+            opponentGloating.play();
       
 }
 }
@@ -275,6 +282,10 @@ function youWin(){
       {dealer.textContent = 'You win this round.'};
       
       
+      
+      let opponentAngerfail = new Audio(newOpponent.angerfail);
+            opponentAngerfail.play();
+      
 }
 
 function youLose(){    
@@ -296,6 +307,9 @@ function youLose(){
     let dealer = document.querySelector('.dealer-message');
 
     dealer.textContent = 'You lose this round.';
+
+    let opponentGloating = new Audio(newOpponent.gloating);
+            opponentGloating.play();
 
     
 
