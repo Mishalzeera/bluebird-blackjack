@@ -16,10 +16,16 @@ body {
 }
 
 .animation {
-      margin-top: 50vh;
+      margin-top: 10vh;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
+}
+
+#bird1,
+#bird2 {
+      width: 20%;
 }
 
 .title {
@@ -28,6 +34,10 @@ body {
       
 }
 
+.credits {
+      color: ivory;
+      font-size: 3rem;
+}
 .gamearea {
 
       height: 85vh;
