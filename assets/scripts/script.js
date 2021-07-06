@@ -1,4 +1,6 @@
 
+// Getting and setting the main button elements for the game, adding and removing Event Listeners etc instead of having lots of buttons in the HTML
+
 const startButton = document.querySelector('#start');
 startButton.addEventListener('click', initGame);
 
@@ -7,6 +9,8 @@ betButton.addEventListener('click', placeBet);
 
 const stayButton = document.querySelector('#stay');
 stayButton.addEventListener('click', stayPlay)
+
+// The Opponents object list! Lots of fun creating them, each has their own greeting, gloat and angry sound
 
 const opponentPlayers = [
       {
@@ -59,6 +63,8 @@ const opponentPlayers = [
       }
 ]
 
+// Global variables declared here. Code was started with the aim of having as few globals as possible, but maybe would have been cleaner to use more of them.
+
 let newOpponent;
 let firstCard;
 let secondCard;
@@ -72,6 +78,8 @@ let startPot = 0;
 let betAmount = 10;
 let opponentHand = [17, 18, 19, 20, 21];
 
+// Sets the starting pot, where Player and Opponent each must put in 10£, also with each new round there is a 10£ buy in. 
+
 let currentCredit = document.querySelector('#credit');
 currentCredit.textContent = startCredit;
 
@@ -79,6 +87,7 @@ let currentPot = document.querySelector('#pot');
   currentPot.textContent = startPot;
 
 
+// In this case the word "Show" refers to the music program.
 
 function startShow(){
       const music = new Audio('assets/music/the-show.mp3');
@@ -86,26 +95,45 @@ music.play();
 music.loop =true;
 }
 
+
+// Init game (as opposed to startGame) makes it so that you play the same opponent for as long as your credit lasts.
+
 function initGame(){
 
       startShow();
+
+      // startButton goes from functioning as the initGame button to the startGame button
+
       startButton.removeEventListener('click', initGame)
       startButton.addEventListener('click', startGame);
+
+      // Getting input from the player, with the added code that allows for a default "Player" name in case someone hits cancel.
 
       playerName = prompt('Welcome to the Bluebird Casino, Your Excellency. May we take your coat? How should we refer to your good self?');
       let nameDiv = document.querySelector('#playername');
       if (!playerName) {nameDiv.textContent = "Player"} else
       {nameDiv.textContent = playerName}
 
+      // Random selection of opponent from the array
+
       newOpponent = opponentPlayers[Math.floor(Math.random() * opponentPlayers.length)]
+
+      // Shows their ridiculous faces
+
       let opponentImgDiv = document.querySelector('#opp')
       opponentImgDiv.src = newOpponent.src
+      // Shows a skill level, which reflects in their higher probability of winning
+
       let opponentSkillDiv = document.querySelector('#skill')
       opponentSkillDiv.textContent = "Your opponent: " + newOpponent.name + " | Skill: " + newOpponent.skill
+
+      // Plays their ridiculous, slightly unPC greetings
+
       let opponentGreeting = new Audio(newOpponent.greeting);
       opponentGreeting.play();
       
   
+      // startGame starts a round of BlackJack
 
       startGame()
 }
@@ -116,14 +144,20 @@ function startGame(){
       
       gameOn = true;
 
+// startGame button becomes a newCard button
 
     startButton.textContent = "NEW CARD"
     startButton.removeEventListener('click', startGame)
     startButton.addEventListener('click', newCard);
-    
+
+//  Hidden HTML elements set to display
+
     betButton.style.display = "block";
 
     stayButton.style.display = "block";
+
+
+//     Pot updates per round
 
     currentCredit.textContent -= 10;
     currentPot.textContent = parseInt(currentPot.textContent) + 20;
@@ -131,22 +165,26 @@ function startGame(){
     let opponentDiv = document.querySelector('.opponent');
     opponentDiv.style.display = "block";
    
+//     Basic game logic comes into play
       playBlackJack()
 
 }
 
 function playBlackJack(){
+      // Random selection of card from cards array (in another script, check the scripts folder, otherwise it gets a bit overwhelming)
 
       firstCard = cards[Math.floor(Math.random() * cards.length)];
       secondCard = cards[Math.floor(Math.random() * cards.length)];
       
+// Graphic rendering of the card objects
 
     let cardimg1 = document.querySelector('#card1img')
     let cardimg2 = document.querySelector('#card2img')
     cardimg1.src = firstCard.src;
     cardimg2.src = secondCard.src;
 
-      
+      // altValue is a way of handling the Ace issue, where "Aces are counted as 11 when this would not make the total more than 21". There must be a better syntax for this.
+
       if (firstCard.altValue === 11 && firstCard.altValue + secondCard.value <= 21){sum = firstCard.altValue + secondCard.value}
       else if (secondCard.altValue === 11 && firstCard.value + secondCard.altValue <= 21){sum = secondCard.altValue + firstCard.value}
 
@@ -155,17 +193,25 @@ function playBlackJack(){
       
       else {sum = firstCard.value + secondCard.value;};
 
+      // Displays the sum value of your cards, so you can make the choice to get another card or stay
+
       let sumDiv = document.querySelector('.sum')
       sumDiv.textContent = `Your hand: ${sum}`
 
+// Player area visible with relevant info
+
     let playerDiv = document.querySelector('.playerarea');
     playerDiv.style.display = "flex";
+
+// Credit colour turns red as Player hits zero
 
     if (currentCredit.textContent === "0"){currentCredit.style.color = "red"; 
     betButton.removeEventListener('click', placeBet)
     ;
 } else if (currentCredit.textContent < "0") {endGame()}
       else if (currentCredit.textContent >= "10") {currentCredit.style.color = "ivory"; betButton.addEventListener('click', placeBet)}
+
+// Sets off the code that allows you to make your intitial decision, to bet or stay.
 
       checkCards();
 
@@ -206,7 +252,7 @@ function newCard(){
       if (extraCard.altValue === 11 && extraCard.altValue + sum <= 21 ) {sum += 11}
       else {sum += extraCard.value;}
 
-      // Aces are counted as 11 when this would not make the total more than 21.
+
       
       sumDiv.textContent = `Your hand: ${sum}`
 
