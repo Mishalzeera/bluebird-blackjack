@@ -1,3 +1,5 @@
+
+
 const startButton = document.querySelector('#start');
 startButton.addEventListener('click', initGame);
 
@@ -77,7 +79,17 @@ currentCredit.textContent = startCredit;
 let currentPot = document.querySelector('#pot');
   currentPot.textContent = startPot;
 
+
+
+function startShow(){
+      const music = new Audio('assets/music/the-show.mp3');
+music.play();
+music.loop =true;
+}
+
 function initGame(){
+
+      startShow();
       startButton.removeEventListener('click', initGame)
       startButton.addEventListener('click', startGame);
 
