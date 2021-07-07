@@ -93,7 +93,7 @@ let currentPot = document.querySelector('#pot');
       gsap.timeline()
 
       // Bird
-      gsap.fromTo("#bird1", {opacity: 0, rotation: 0}, {duration: 2, opacity: 1, rotation: 720});
+      gsap.fromTo("#bird1", {opacity: 0, rotation: 0, rotation: 0}, {duration: 1, opacity: 1, rotation: 45});
 
 // 35Smile Presents
       gsap.fromTo("#anim-credit1", {opacity: 0, scale: 0, rotation: 0}, {duration: .2, opacity: 1, scale: 1, rotation: 0, delay: 3});
