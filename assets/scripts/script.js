@@ -1,3 +1,4 @@
+window.onload = (startAnimation())
 
 // Getting and setting the main button elements for the game, adding and removing Event Listeners etc instead of having lots of buttons in the HTML
 
@@ -87,11 +88,37 @@ let currentPot = document.querySelector('#pot');
   currentPot.textContent = startPot;
 
 
+  function startAnimation(){
+      gsap.timeline()
+      gsap.fromTo("#bird1", {opacity: 0, scale: 0, rotation: 0}, {duration: .5, opacity: 1, scale: 1, rotation: 0});
+      gsap.to("#bird1", {opacity: 0, scale: 0, duration: .5, delay: 2});
+
+      gsap.fromTo("#anim-title", {opacity: 0, scale: 0, rotation: 0}, {duration: .5, opacity: 1, scale: 1, rotation: 0, delay: 4});
+      gsap.to("#anim-title", {opacity: 0, scale: 0, duration: .5, delay: 6});
+
+      gsap.fromTo("#anim-credit1", {opacity: 0, scale: 0, rotation: 0}, {duration: .5, opacity: 1, scale: 1, rotation: 0, delay: 8});
+      gsap.to("#anim-credit1", {opacity: 0, scale: 0, duration: .5, delay: 10});
+
+      gsap.fromTo("#anim-credit2", {opacity: 0, scale: 0, rotation: 0}, {duration: .5, opacity: 1, scale: 1, rotation: 0, delay: 12});
+      gsap.to("#anim-credit2", {opacity: 0, scale: 0, duration: .5, delay: 14});
+
+      gsap.fromTo("#anim-credit3", {opacity: 0, scale: 0, rotation: 0}, {duration: .5, opacity: 1, scale: 1, rotation: 0, delay: 16});
+      gsap.to("#anim-credit3", {opacity: 0, scale: 0, duration: .5, delay: 18});
+
+      gsap.fromTo("#anim-credit4", {opacity: 0, scale: 0, rotation: 0}, {duration: .5, opacity: 1, scale: 1, rotation: 0, delay: 20});
+      gsap.to("#anim-credit4", {opacity: 0, scale: 0, duration: .5, delay: 22});
+
+
+      
+
+}
+
 // In this case the word "Show" refers to the music program.
 
 function startShow(){
       const music = new Audio('assets/music/the-show.mp3');
 music.play();
+music.volume = .5;
 music.loop =true;
 }
 
