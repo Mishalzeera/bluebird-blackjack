@@ -1,4 +1,4 @@
-window.onload = (startAnimation())
+// window.onload = (startAnimation())
 
 // Getting and setting the main button elements for the game, adding and removing Event Listeners etc instead of having lots of buttons in the HTML
 
@@ -10,6 +10,9 @@ betButton.addEventListener('click', placeBet);
 
 const stayButton = document.querySelector('#stay');
 stayButton.addEventListener('click', stayPlay)
+
+const opponentButton = document.querySelector('#opp-change');
+      opponentButton.addEventListener('click', changeOpponent);
 
 // The Opponents object list! Lots of fun creating them, each has their own greeting, gloat and angry sound
 
@@ -153,7 +156,7 @@ function initGame(){
 
       // Getting input from the player, with the added code that allows for a default "Player" name in case someone hits cancel.
 
-      playerName = prompt('Welcome to the Bluebird Casino, Your Excellency. May we take your coat? How should we refer to your good self?');
+      playerName = prompt('Welcome to the Bluebird Casino. Enter your name, Player.');
       let nameDiv = document.querySelector('#playername');
       if (!playerName) {nameDiv.textContent = "Player"} else
       {nameDiv.textContent = playerName}
@@ -169,7 +172,7 @@ function initGame(){
       // Shows a skill level, which reflects in their higher probability of winning
 
       let opponentSkillDiv = document.querySelector('#skill')
-      opponentSkillDiv.textContent = "Your opponent: " + newOpponent.name + " | Skill: " + newOpponent.skill
+      opponentSkillDiv.textContent = newOpponent.name + " | Skill: " + newOpponent.skill
 
       // Plays their ridiculous, slightly unPC greetings
 
@@ -367,6 +370,27 @@ function stayPlay(){
 
       compareSums();
       
+}
+
+function changeOpponent(){
+
+      
+
+      newOpponent = opponentPlayers[Math.floor(Math.random() * opponentPlayers.length)]
+
+      // Shows their ridiculous faces
+
+      let opponentImgDiv = document.querySelector('#opp')
+      opponentImgDiv.src = newOpponent.src
+      // Shows a skill level, which reflects in their higher probability of winning
+
+      let opponentSkillDiv = document.querySelector('#skill')
+      opponentSkillDiv.textContent = newOpponent.name + " | Skill: " + newOpponent.skill
+
+      // Plays their ridiculous, slightly unPC greetings
+
+      let opponentGreeting = new Audio(newOpponent.greeting);
+      opponentGreeting.play();
 }
 
 // If you win, youWin() - which allows for 2 * the pot plus 100 in the case of Blackjack
