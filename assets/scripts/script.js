@@ -133,10 +133,12 @@ function initGame(){
       opponentGreeting.play();
       
   
-      // startGame starts a round of BlackJack
+  
 
       startGame()
 }
+
+    // startGame starts a round of BlackJack
 
 function startGame(){
 
@@ -217,10 +219,11 @@ function playBlackJack(){
 
 }
 
+// Sets initial logic for hand after dealing
+
 function checkCards(){
       let dealer = document.querySelector('.dealer-message')
 
-// Sets initial logic for hand after dealing
 
       if (sum <= 20) {
             dealer.textContent = "Choose your next move."
@@ -268,6 +271,8 @@ function newCard(){
 
 }
 
+// Responds to the Bet button, adding 10£ to the pot
+
 function placeBet(){
       
       let currentCredit = document.querySelector('#credit');
@@ -277,13 +282,15 @@ function placeBet(){
     let currentPot = document.querySelector('#pot'); 
      currentPot.textContent = parseInt(currentPot.textContent) + (betAmount * 2);
 
+//      Lets Player know that she is at 0 by turning red, its the last round before the manager kicks you out, also removes the functionality of the Bet button temporarily as the Bluebird Casino sadly no longer offers credit
+
      if (currentCredit.textContent === "0"){currentCredit.style.color = "red"; 
      betButton.removeEventListener('click', placeBet)
      } else if (currentCredit.textContent > "0") {currentCredit.style.color = "ivory"; betButton.addEventListener('click', placeBet)}
 }
      
       
-
+// Handles the interface when its time for a new round with the same Opponent.
 
 function newRound(){
       startButton.textContent = "NEW CARD"
@@ -304,6 +311,8 @@ function newRound(){
     
 }
 
+//  When Player chooses to not get a new card or bet, the Stay button initialises this function, which then concludes the round
+
 function stayPlay(){
 
       // Uses opponentGame function to calculate a virtual game that is then compared to Players sum value
@@ -315,6 +324,8 @@ function stayPlay(){
       compareSums();
       
 }
+
+// If you win, youWin() - which allows for 2 * the pot plus 100 in the case of Blackjack
 
 function youWin(){
       let currentCredit = document.querySelector('#credit');
@@ -350,6 +361,8 @@ function youWin(){
       
 }
 
+// If you lose, youLose() - Pot goes to opponent and either a new round or the manager kicks you out.
+
 function youLose(){    
       let currentCredit = document.querySelector('#credit');
       let currentPot = document.querySelector('#pot');
@@ -377,6 +390,8 @@ function youLose(){
 
 }
 
+// To be implemented
+
 function refreshAll(){
 
       let cardimg1 = document.querySelector('#card1img')
@@ -399,6 +414,8 @@ function refreshAll(){
     
 }
 
+// Logic for the opponent game behind the scenes - which is actually the same as the Player game in that it uses random cards - the only hard coded part is that I tried to average out when a person would choose to get another card or stay. To be implemented
+
 function opponentGame(){
       let firstCardOpponent = cards[Math.floor(Math.random() * cards.length)];
       let secondCardOpponent = cards[Math.floor(Math.random() * cards.length)];
@@ -415,9 +432,13 @@ function opponentGame(){
             
 }
 
+// Final sum compare, which determines who wins the round if things have gotten far enough that both Player and Opponents hands have developed.
+
 function compareSums(){
  if (sum > opponentGame()){youWin(); console.log('you win')}else{youLose(); console.log('you lose')}
 }
+
+// "If you want to play, well then you've got to pay" - Shopkeeper in Demon's Souls
 
 function endGame(){
       alert('The manager has asked you to leave.');
