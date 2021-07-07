@@ -16,16 +16,17 @@ body {
 }
 
 .animation {
-      margin-top: 10vh;
+      margin-top: 5vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
 }
 
+
+
 #bird1,
 #bird2 {
-      
       width: 20%;
 }
 

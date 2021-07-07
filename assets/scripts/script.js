@@ -89,28 +89,44 @@ let currentPot = document.querySelector('#pot');
 
 
   function startAnimation(){
+        startShow();
       gsap.timeline()
-      gsap.fromTo("#bird1", {opacity: 0, scale: 0, rotation: 0}, {duration: .5, opacity: 1, scale: 1, rotation: 0});
-      gsap.to("#bird1", {opacity: 0, scale: 0, duration: .5, delay: 2});
 
-      gsap.fromTo("#anim-title", {opacity: 0, scale: 0, rotation: 0}, {duration: .5, opacity: 1, scale: 1, rotation: 0, delay: 4});
-      gsap.to("#anim-title", {opacity: 0, scale: 0, duration: .5, delay: 6});
+      // Bird
+      gsap.fromTo("#bird1", {opacity: 0, rotation: 0}, {duration: 2, opacity: 1, rotation: 720});
 
-      gsap.fromTo("#anim-credit1", {opacity: 0, scale: 0, rotation: 0}, {duration: .5, opacity: 1, scale: 1, rotation: 0, delay: 8});
-      gsap.to("#anim-credit1", {opacity: 0, scale: 0, duration: .5, delay: 10});
+// 35Smile Presents
+      gsap.fromTo("#anim-credit1", {opacity: 0, scale: 0, rotation: 0}, {duration: .2, opacity: 1, scale: 1, rotation: 0, delay: 3});
+      gsap.to("#anim-credit1", {opacity: 0, duration: .5, delay: 5});
 
-      gsap.fromTo("#anim-credit2", {opacity: 0, scale: 0, rotation: 0}, {duration: .5, opacity: 1, scale: 1, rotation: 0, delay: 12});
-      gsap.to("#anim-credit2", {opacity: 0, scale: 0, duration: .5, delay: 14});
+//  A Thingie Production
 
-      gsap.fromTo("#anim-credit3", {opacity: 0, scale: 0, rotation: 0}, {duration: .5, opacity: 1, scale: 1, rotation: 0, delay: 16});
-      gsap.to("#anim-credit3", {opacity: 0, scale: 0, duration: .5, delay: 18});
+      gsap.fromTo("#anim-credit2", {opacity: 0, scale: 0, rotation: 0}, {duration: .2, opacity: 1, scale: 1, rotation: 0, delay: 7});
+      gsap.to("#anim-credit2", {opacity: 0, duration: .5, delay: 9});
+// Title
+      gsap.fromTo("#anim-title", {opacity: 0, scale: 0, rotation: 0}, {duration: .2, opacity: 1, scale: 1, rotation: 0, delay: 11});
+// Featuring
+      gsap.fromTo("#anim-credit3", {opacity: 0, scale: 0, rotation: 0}, {duration: .2, opacity: 1, scale: 1, rotation: 0, delay: 13});
+      // gsap.to("#anim-credit3", {opacity: 0, scale: 0, duration: .5, delay: 15});
+// The band
+      gsap.fromTo("#anim-credit4", {opacity: 0, scale: 0, rotation: 0}, {duration: .2, opacity: 1, scale: 1, rotation: 0, delay: 15});
+      // gsap.to("#anim-credit4", {opacity: 0, scale: 0, duration: .5, delay: 22});
+// Make it all disappear
+      gsap.to("#bird1",{opacity: 0, duration: .5, delay: 17});
+      gsap.to("#anim-title",{opacity: 0, duration: .5, delay: 18});
+      gsap.to("#anim-credit3",{opacity: 0, duration: .5, delay: 19});
+      gsap.to("#anim-credit4",{opacity: 0, duration: .5, delay: 19});
 
-      gsap.fromTo("#anim-credit4", {opacity: 0, scale: 0, rotation: 0}, {duration: .5, opacity: 1, scale: 1, rotation: 0, delay: 20});
-      gsap.to("#anim-credit4", {opacity: 0, scale: 0, duration: .5, delay: 22});
 
-
+       setTimeout(removeAnimationSection, 22000)
       
 
+}
+
+function removeAnimationSection() {
+
+ let animationSection = document.querySelector('.animation');
+ document.body.removeChild(animationSection);
 }
 
 // In this case the word "Show" refers to the music program.
@@ -118,8 +134,9 @@ let currentPot = document.querySelector('#pot');
 function startShow(){
       const music = new Audio('assets/music/the-show.mp3');
 music.play();
-music.volume = .5;
+music.volume = .7;
 music.loop =true;
+
 }
 
 
@@ -127,7 +144,7 @@ music.loop =true;
 
 function initGame(){
 
-      startShow();
+      // startShow();
 
       // startButton goes from functioning as the initGame button to the startGame button
 
@@ -469,5 +486,6 @@ function compareSums(){
 
 function endGame(){
       alert('The manager has asked you to leave.');
-      location.reload();
+      currentCredit.textContent = startCredit;
+      initGame();
 }
