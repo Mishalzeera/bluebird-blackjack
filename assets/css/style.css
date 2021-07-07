@@ -104,11 +104,12 @@ body {
 }
 
 #opp-change {
+     
       background: ivory;
       font-family: inherit;
       font-size: .5rem;
       text-transform: uppercase;
-      opacity: .05;
+      opacity: .2;
       border: unset;
       padding: .5rem 1rem;
       transition: all 150ms ease-in-out;

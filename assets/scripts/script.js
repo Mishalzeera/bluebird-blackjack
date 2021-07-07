@@ -1,4 +1,4 @@
-// window.onload = (startAnimation())
+window.onload = (startAnimation())
 
 // Getting and setting the main button elements for the game, adding and removing Event Listeners etc instead of having lots of buttons in the HTML
 
@@ -18,7 +18,7 @@ const opponentButton = document.querySelector('#opp-change');
 
 const opponentPlayers = [
       {
-            name: "The Mysterious Mrs. Cheng",
+            name: "Mrs. Cheng",
             skill: 2,
             src: "assets/imgs/opponents/mrs-cheng.png",
             greeting: "assets/audio/voices/mrs-cheng-greeting.mp3",
@@ -26,7 +26,7 @@ const opponentPlayers = [
             angerfail: "assets/audio/voices/mrs-cheng-angerfail.mp3"
       },
       {
-            name: "The Esteemed Dr. Mischa Olyavetch",
+            name: "Dr. Mischa Olyavetch",
             skill: 3,
             src: "assets/imgs/opponents/dr-mischa.png",
             greeting: "assets/audio/voices/drmischa-greeting.mp3",
@@ -42,7 +42,7 @@ const opponentPlayers = [
             angerfail: "assets/audio/voices/sheikh-angerfail.mp3"
       },
       {
-            name: "The Young American Miss Lucy Evans",
+            name: "Miss Lucy Evans",
             skill: 3,
             src: "assets/imgs/opponents/lucy.png",
             greeting: "assets/audio/voices/american-greeting.mp3",
@@ -50,7 +50,7 @@ const opponentPlayers = [
             angerfail: "assets/audio/voices/american-angerfail.mp3"
       },
       {
-            name: "His Excellency The Colonel Enrique Diaz Firpi III",
+            name: "Colonel Enrique Diaz Firpi III",
             skill: 2,
             src: "assets/imgs/opponents/colonel.png",
             greeting: "assets/audio/voices/enrique-greeting.mp3",
@@ -96,7 +96,7 @@ let currentPot = document.querySelector('#pot');
       gsap.timeline()
 
       // Bird
-      gsap.fromTo("#bird1", {opacity: 0, rotation: 0, rotation: 0}, {duration: 1, opacity: 1, rotation: 45});
+      gsap.fromTo("#bird1", {opacity: 0, x: -800}, {duration: 11, opacity: 1, x:0, rotation: 720, ease: "linear"});
 
 // 35Smile Presents
       gsap.fromTo("#anim-credit1", {opacity: 0, scale: 0, rotation: 0}, {duration: .2, opacity: 1, scale: 1, rotation: 0, delay: 3});
