@@ -158,11 +158,11 @@ function removeAnimationSection() {
 function startShow() {
   const music = new Audio("assets/music/the-show.mp3");
   music.play();
-  music.volume = 0.7;
+  music.volume = 0.5;
   music.loop = true;
 }
 
-// Init game (as opposed to startGame) makes it so that you play the same opponent for as long as your credit lasts.
+// Init game (as opposed to startGame) gets and sets your name, selects opponent for you and starts a round of Blackjack.
 
 function initGame() {
   // startShow();
@@ -310,13 +310,13 @@ function checkCards() {
     dealer.textContent = "You've got Blackjack!";
     blackJack = true;
     youWin();
-    let opponentAngerfail = new Audio(newOpponent.angerfail);
-    opponentAngerfail.play();
+    // let opponentAngerfail = new Audio(newOpponent.angerfail);
+    // opponentAngerfail.play();
   } else {
     dealer.textContent = "Sorry, you lose this round.";
     youLose();
-    let opponentGloating = new Audio(newOpponent.gloating);
-    opponentGloating.play();
+    // let opponentGloating = new Audio(newOpponent.gloating);
+    // opponentGloating.play();
   }
 }
 
