@@ -20,7 +20,7 @@ const opponentPlayers = [
   {
     name: "Mrs. Cheng",
     skill: 2,
-    src: "assets/imgs/opponents/mrs-cheng.png",
+    src: "assets/imgs/opponents/mrs-cheng.jpg",
     greeting: "assets/audio/voices/mrs-cheng-greeting.mp3",
     gloating: "assets/audio/voices/mrs-cheng-gloating.mp3",
     angerfail: "assets/audio/voices/mrs-cheng-angerfail.mp3",
@@ -28,7 +28,7 @@ const opponentPlayers = [
   {
     name: "Dr. Mischa Olyavetch",
     skill: 3,
-    src: "assets/imgs/opponents/dr-mischa.png",
+    src: "assets/imgs/opponents/dr-mischa.jpg",
     greeting: "assets/audio/voices/drmischa-greeting.mp3",
     gloating: "assets/audio/voices/drmischa-gloating.mp3",
     angerfail: "assets/audio/voices/drmischa-angerfail.mp3",
@@ -36,7 +36,7 @@ const opponentPlayers = [
   {
     name: "Sheikh Jaber bin Ahmed bin Salman",
     skill: 1,
-    src: "assets/imgs/opponents/the-sheikh.png",
+    src: "assets/imgs/opponents/the-sheikh.jpg",
     greeting: "assets/audio/voices/sheikh-greeting.mp3",
     gloating: "assets/audio/voices/sheikh-gloating.mp3",
     angerfail: "assets/audio/voices/sheikh-angerfail.mp3",
@@ -44,7 +44,7 @@ const opponentPlayers = [
   {
     name: "Miss Lucy Evans",
     skill: 3,
-    src: "assets/imgs/opponents/lucy.png",
+    src: "assets/imgs/opponents/lucy.jpg",
     greeting: "assets/audio/voices/american-greeting.mp3",
     gloating: "assets/audio/voices/american-gloating.mp3",
     angerfail: "assets/audio/voices/american-angerfail.mp3",
@@ -52,7 +52,7 @@ const opponentPlayers = [
   {
     name: "Colonel Enrique Diaz Firpi III",
     skill: 2,
-    src: "assets/imgs/opponents/colonel.png",
+    src: "assets/imgs/opponents/colonel.jpg",
     greeting: "assets/audio/voices/enrique-greeting.mp3",
     gloating: "assets/audio/voices/enrique-gloating.mp3",
     angerfail: "assets/audio/voices/enrique-angerfail.mp3",
@@ -60,7 +60,7 @@ const opponentPlayers = [
   {
     name: "Dame Emily Holz-Wilkinson",
     skill: 1,
-    src: "assets/imgs/opponents/waitress.png",
+    src: "assets/imgs/opponents/waitress.jpg",
     greeting: "assets/audio/voices/dame-greeting.mp3",
     gloating: "assets/audio/voices/dame-gloating.mp3",
     angerfail: "assets/audio/voices/dame-angerfail.mp3",
