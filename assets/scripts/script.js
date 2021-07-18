@@ -1,4 +1,4 @@
-window.onload = startAnimation();
+// window.onload = startAnimation();
 
 // Getting and setting the main button elements for the game, adding and removing Event Listeners etc instead of having lots of buttons in the HTML
 

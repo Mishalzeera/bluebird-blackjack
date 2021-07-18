@@ -1,60 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Bluebird Blackjack</title>
-      <link rel="stylesheet" href="assets/css/style.css">
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js" integrity="sha512-2fk3Q4NXPYAqIha0glLZ2nluueK43aNoxvijPf53+DgL7UW9mkN+uXc1aEmnZdkkZVvtJZltpRt+JqTWc3TS3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-</head>
-<body> 
-      <section class="animation">
-            <img src="assets/imgs/bg-tiled-png/vintage-blue-bird-clipart-vintage-bluebird-png-1932_2318.png" alt="a beautiful big bluebird" id="bird1">
-            <h1 class="title" id="anim-title">BLUEBIRD BLACKJACK</h1>
-            <p class="credits" id="anim-credit1">35SMILE PRESENTS</p>
-            <p class="credits" id="anim-credit2">A THINGY PRODUCTION</p>
-            <p class="credits" id="anim-credit3">featuring</p>
-            <p class="credits" id="anim-credit4">THE BLUEBIRD CASINO HOUSE BAND</p>
-            
-
-      </section>
-      <section class="gamearea">
-            <div class="cardsarea">
-                  <img src="" alt="">
-                  <div class="cards">
-                        <img src="" id="card1img" class="yourcards">
-                        <img src="" id="card2img" class="yourcards yourrightcard">
-                        <img src="" id="nextcardimg" class="yourcards yournextcard">
-                       
-                  </div>
-                  <div class="sum"></div>
-                  <div class="opponent-sum" style="display: none;"></div>
-                  <div class="opponent" style="display: none;">
-                        
-                        <img src="" alt="" id="opp">
-                        <p id="skill"></p>
-                        <button id="opp-change">New Opponent</button>
-                  </div>
-                  <div class="dealer-message"></div>
-            </div>
-            <div class="dealerarea">
-                  <button class="btn" id="stay" style="display: none;">STAY</button>
-                  <button class="btn" id="start">START GAME</button>
-                  <button class="btn" id="bet" style="display: none;">BET</button>
-                  
-                
-            </div>
-      </section>
-      <section class="playerarea" style="display: none;">
-            <p id="playername">Player</p>
-            <p id="pot"></p>
-            <p id="credit"></p>
-            
-            
-      </section>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js" integrity="sha512-2fk3Q4NXPYAqIha0glLZ2nluueK43aNoxvijPf53+DgL7UW9mkN+uXc1aEmnZdkkZVvtJZltpRt+JqTWc3TS3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-      <script src="assets/scripts/cards.js"></script>
-      <script src="assets/scripts/script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bluebird Blackjack</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"
+      integrity="sha512-2fk3Q4NXPYAqIha0glLZ2nluueK43aNoxvijPf53+DgL7UW9mkN+uXc1aEmnZdkkZVvtJZltpRt+JqTWc3TS3Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <section class="welcome">
+      <p class="welcome-text">
+        Please adjust your sound settings, this game contains music and sound
+        effects.
+      </p>
+      <form method="GET" action="main.html">
+        <input type="submit" class="btn" />
+      </form>
+    </section>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"
+      integrity="sha512-2fk3Q4NXPYAqIha0glLZ2nluueK43aNoxvijPf53+DgL7UW9mkN+uXc1aEmnZdkkZVvtJZltpRt+JqTWc3TS3Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="assets/scripts/cards.js"></script>
+    <script src="assets/scripts/script.js"></script>
+  </body>
 </html>
