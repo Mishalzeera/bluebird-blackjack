@@ -98,7 +98,7 @@ function startAnimation() {
   gsap.fromTo(
     "#bird1",
     { opacity: 0, x: -800 },
-    { duration: 3, opacity: 1, x: 0, rotation: 30, ease: "linear" }
+    { duration: 0.4, opacity: 1, x: 0, rotation: 5, ease: "linear" }
   );
 
   // 35Smile Presents
