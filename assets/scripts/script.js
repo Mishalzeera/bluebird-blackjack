@@ -1,5 +1,3 @@
-// window.onload = startAnimation();
-
 // Getting and setting the main button elements for the game, adding and removing Event Listeners etc instead of having lots of buttons in the HTML
 
 const startButton = document.querySelector("#start");
@@ -14,7 +12,7 @@ stayButton.addEventListener("click", stayPlay);
 const opponentButton = document.querySelector("#opp-change");
 opponentButton.addEventListener("click", changeOpponent);
 
-// The Opponents object list! Lots of fun creating them, each has their own greeting, gloat and angry sound
+// The Opponents object list! Lots of fun creating them, each has their own greeting, gloat and angry sound (TODO: add multiples of each in arrays, random selection, better voices and characters coming)
 
 const opponentPlayers = [
   {
@@ -67,7 +65,7 @@ const opponentPlayers = [
   },
 ];
 
-// Global variables declared here. Code was started with the aim of having as few globals as possible, but maybe would have been cleaner to use more of them.
+// Global variables declared here. Code was started with the aim of having as few globals as possible.
 
 let newOpponent;
 let firstCard;
@@ -117,19 +115,23 @@ function startAnimation() {
     { duration: 0.2, opacity: 1, scale: 1, rotation: 0, delay: 7 }
   );
   gsap.to("#anim-credit2", { opacity: 0, duration: 0.5, delay: 9 });
+
   // Title
   gsap.fromTo(
     "#anim-title",
     { opacity: 0, scale: 0, rotation: 0 },
     { duration: 0.2, opacity: 1, scale: 1, rotation: 0, delay: 11 }
   );
+
   // Featuring
   gsap.fromTo(
     "#anim-credit3",
     { opacity: 0, scale: 0, rotation: 0 },
     { duration: 0.2, opacity: 1, scale: 1, rotation: 0, delay: 13 }
   );
+
   // gsap.to("#anim-credit3", {opacity: 0, scale: 0, duration: .5, delay: 15});
+
   // The band
   gsap.fromTo(
     "#anim-credit4",
@@ -137,6 +139,7 @@ function startAnimation() {
     { duration: 0.2, opacity: 1, scale: 1, rotation: 0, delay: 15 }
   );
   // gsap.to("#anim-credit4", {opacity: 0, scale: 0, duration: .5, delay: 22});
+
   // Make it all disappear
   gsap.to("#bird1", { opacity: 0, duration: 0.5, delay: 17 });
   gsap.to("#anim-title", { opacity: 0, duration: 0.5, delay: 18 });
@@ -165,8 +168,6 @@ function startShow() {
 // Init game (as opposed to startGame) gets and sets your name, selects opponent for you and starts a round of Blackjack.
 
 function initGame() {
-  // startShow();
-
   // startButton goes from functioning as the initGame button to the startGame button
 
   startButton.removeEventListener("click", initGame);
@@ -194,7 +195,7 @@ function initGame() {
   let opponentImgDiv = document.querySelector("#opp");
   opponentImgDiv.src = newOpponent.src;
 
-  // Shows a skill level, which reflects in their higher probability of winning
+  // Shows a skill level, which reflects in their higher probability of winning (TODO)
 
   let opponentSkillDiv = document.querySelector("#skill");
   opponentSkillDiv.textContent =
@@ -234,6 +235,7 @@ function startGame() {
   opponentDiv.style.display = "block";
 
   //     Basic game logic comes into play
+
   playBlackJack();
 }
 
