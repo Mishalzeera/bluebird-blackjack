@@ -154,6 +154,9 @@ function startAnimation() {
 function removeAnimationSection() {
   let animationSection = document.querySelector(".animation");
   document.body.removeChild(animationSection);
+
+  let skipButton = document.getElementById("skip-btn");
+  skipButton.style.display = "none";
 }
 
 // In this case the word "Show" refers to the music program.

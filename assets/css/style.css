@@ -180,6 +180,10 @@ body {
   text-align: right;
 }
 
+#skip-btn {
+  display: inline-block;
+}
+
 #credit::after {
   content: "£ credit";
   font-size: 0.8rem;
