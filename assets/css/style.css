@@ -173,7 +173,6 @@ body {
   justify-content: flex-end;
 }
 .mutebutton {
-  /* display: none; */
   font-size: 0.6rem;
   opacity: 0.1;
   padding: 0.2rem 1rem;
@@ -205,4 +204,39 @@ body {
   justify-content: space-around;
   align-items: center;
   font-size: 2.5rem;
+}
+
+@media (max-width: 500px) {
+  .mutebuttondiv {
+    padding: 0.5rem;
+  }
+
+  #opp {
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    left: 0;
+    margin-bottom: 2rem;
+  }
+  .opponent {
+    font-size: 0rem;
+  }
+
+  #opp-change {
+    padding: 0.2rem 0.5rem;
+    margin: 1.5rem;
+  }
+  .yourcards {
+    width: 50%;
+  }
+
+  .btn {
+    margin-right: 1%;
+    width: 32%;
+    height: 5rem;
+    font-size: 0.7rem;
+  }
+  .mutebutton {
+    padding: 0.5rem 1.5rem;
+  }
 }
