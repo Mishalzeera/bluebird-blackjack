@@ -12,7 +12,7 @@ stayButton.addEventListener("click", stayPlay);
 const opponentButton = document.querySelector("#opp-change");
 opponentButton.addEventListener("click", changeOpponent);
 
-// The Opponents object list! Lots of fun creating them, each has their own greeting, gloat and angry sound (TODO: add multiples of each in arrays, random selection, better voices and characters coming)
+// The Opponents object list! Lots of fun creating them, each has their own greeting, gloat and angry sound
 
 const opponentPlayers = [
   {
