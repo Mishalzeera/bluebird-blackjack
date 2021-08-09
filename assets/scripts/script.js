@@ -66,7 +66,7 @@ const opponentPlayers = [
 ];
 
 // Global variables declared here. Code was started with the aim of having as few globals as possible.
-
+const music = new Audio("assets/music/the-show.mp3");
 let newOpponent;
 let firstCard;
 let secondCard;
@@ -159,10 +159,18 @@ function removeAnimationSection() {
 // In this case the word "Show" refers to the music program.
 
 function startShow() {
-  const music = new Audio("assets/music/the-show.mp3");
   music.play();
   music.volume = 0.5;
   music.loop = true;
+  music.muted = false;
+}
+
+function checkMute() {
+  if (music.volume === 0.5) {
+    music.volume = 0;
+  } else if (music.volume === 0) {
+    music.volume = 0.5;
+  }
 }
 
 // Init game (as opposed to startGame) gets and sets your name, selects opponent for you and starts a round of Blackjack.
@@ -212,6 +220,7 @@ function initGame() {
 // startGame starts a round of BlackJack
 
 function startGame() {
+  // removeAnimationSection();
   gameOn = true;
 
   // startGame button becomes a newCard button
