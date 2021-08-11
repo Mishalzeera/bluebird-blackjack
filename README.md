@@ -2,7 +2,7 @@
 
 A simple blackjack game with a virtual live music experience. Styled according
 to a vintage Raj/colonial era look but musically evocative of surf and early
-RnB. The game is to entertain casually. The author made all of the music
+RnB. The game is to entertain casually. The author made the music
 at home on a computer, but the intention was to sound like a live band, warts
 and all. The audience sound was pieced together from other recordings. The
 opponent characters are a feature that promotes a lighthearted atmosphere. The
