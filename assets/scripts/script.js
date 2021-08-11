@@ -499,7 +499,7 @@ function youLose() {
   opponentGloating.play();
 }
 
-// To be implemented
+// Refreshes... all.
 
 function refreshAll() {
   let cardimg1 = document.querySelector("#card1img");
