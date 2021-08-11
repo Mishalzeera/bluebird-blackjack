@@ -33,7 +33,7 @@ The goals of the user are:
 
 The user is the kind of person who wants a quick, handy game on their phone to
 play when they have to wait in line somewhere. They have their headphones
-in all the time and are easily beguiled by sounds and images. They are the type
+on all the time and are easily beguiled by sounds and images. They are the type
 who get hooked on one game for long periods and appreciate something as simple
 and classic as a blackjack game.
 
@@ -70,14 +70,25 @@ those early games had plenty of character despite the limited substance.
 - A small button offers the user the ability to skip the intro, allowing the
   Start button to show itself. This is handy for repeat players.
 
-- Another small button allows for an option to mute the music, which is the
-  polite thing to do.
+- Another small button allows for an option to mute the music.
 
 - The user is prompted to enter their name, if the user isn't interested in
   that, the name "Player" is assigned to them.
 
 - 10 pounds is added to the pot by both Player and opponent, and the game
   starts.
+
+- The player has the option to "Stay" which automatically ends the round,
+  comparing with the opponents hand.
+
+- Opponents hand is dynamically generated behind the scenes using the same
+  random selections. The code determines when the Opponent would choose another
+  card or not, depending on a set sum threshold.
+
+- The player has the option to request a new card, the value of which is added
+  to the sum below. The latest card is displayed visually above.
+
+- The player has the option to bet a fixed amount, increasing the pot.
 
 ## Features
 
@@ -96,7 +107,7 @@ reference.
 The colour scheme is blue velvet and ivory. A blend of CSS properties created
 the faded velvet look, a combination of a tileable textured fuzz background
 downloaded from toptotal.com and a hue of dark blue. The handy "ivory" colour
-was a nice match.
+was a nice match for fonts and buttons.
 
 Libre Caslon was chosen since its character matched the look and feel of the
 era. A bit worn out but still stately. The kind of font that evokes a
