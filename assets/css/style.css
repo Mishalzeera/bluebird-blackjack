@@ -227,14 +227,16 @@ body {
     margin: 1.5rem;
   }
   .yourcards {
-    width: 50%;
+    width: 35%;
   }
 
   .btn {
     margin-right: 1%;
     width: 32%;
-    height: 5rem;
+    height: 2.5rem;
+
     font-size: 0.7rem;
+    padding: unset;
   }
   .mutebutton {
     padding: 0.5rem 1.5rem;
