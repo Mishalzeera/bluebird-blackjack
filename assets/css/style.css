@@ -207,6 +207,18 @@ body {
 }
 
 @media (max-width: 500px) {
+  .animation {
+    margin-top: 2rem;
+    margin-bottom: 30vh;
+    max-width: fit-content;
+    text-align: center;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .credits {
+    font-size: 1.5rem;
+  }
   .mutebuttondiv {
     padding: 0.5rem;
   }
