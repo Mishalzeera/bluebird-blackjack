@@ -130,15 +130,12 @@ function startAnimation() {
     { duration: 0.2, opacity: 1, scale: 1, rotation: 0, delay: 13 }
   );
 
-  // gsap.to("#anim-credit3", {opacity: 0, scale: 0, duration: .5, delay: 15});
-
   // The band
   gsap.fromTo(
     "#anim-credit4",
     { opacity: 0, scale: 0, rotation: 0 },
     { duration: 0.2, opacity: 1, scale: 1, rotation: 0, delay: 15 }
   );
-  // gsap.to("#anim-credit4", {opacity: 0, scale: 0, duration: .5, delay: 22});
 
   // Make it all disappear
   gsap.to("#bird1", { opacity: 0, duration: 0.5, delay: 17 });
