@@ -65,7 +65,8 @@ const opponentPlayers = [
   },
 ];
 
-// Global variables declared here. Code was started with the aim of having as few globals as possible.
+// Global variables declared here. Code was started with the aim of having as few globals as possible. That didn't go so well.
+
 const music = new Audio("assets/music/the-show.mp3");
 let newOpponent;
 let firstCard;
@@ -210,8 +211,8 @@ function initGame() {
     newOpponent.name + " | Skill: " + newOpponent.skill;
 
   // Plays their greetings
-
   let opponentGreeting = new Audio(newOpponent.greeting);
+
   opponentGreeting.play();
 
   startGame();
@@ -321,13 +322,9 @@ function checkCards() {
     dealer.textContent = "You've got Blackjack!";
     blackJack = true;
     youWin();
-    // let opponentAngerfail = new Audio(newOpponent.angerfail);
-    // opponentAngerfail.play();
   } else {
     dealer.textContent = "Sorry, you lose this round.";
     youLose();
-    // let opponentGloating = new Audio(newOpponent.gloating);
-    // opponentGloating.play();
   }
 }
 
