@@ -1,5 +1,8 @@
 # Bluebird Blackjack
 
+--Please play on either Firefox or Chrome. Safari has issues that can't be
+resolved for now!--
+
 A simple blackjack game with a virtual live music experience. Styled according
 to a vintage Raj/colonial era look but musically evocative of surf and early
 RnB. The game is to entertain casually. The author made the music
@@ -323,6 +326,9 @@ who tried it, those flaws were now "giving character".
   quiet, and it also was out of character.
 
 ### Bugs
+
+- No Safari support, whether on mobile or desktop. The music won't play and
+  the animation has problems too.
 
 - Often, a Blackjack result is given despite the sum not adding up to 21. This
   is despite an if-else structure that should only return a Blackjack result in
