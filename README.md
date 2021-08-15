@@ -210,6 +210,12 @@ to Netlify. The steps followed were:
   granular control over the settings. The author has no idea how to do that now
   but is keeping it in mind.
 
+- The game didn't work well on mobile initially, arranging the elements without
+  too much clutter was a challenge. The start animation also took some time before
+  it fit well enough on a mobile size screen. Initally a very daunting moment,
+  since so much of the game was written up already, until it was realised that
+  a few key CSS properties were all that needed to be manipulated.
+
 ### Learning Javascript
 
 Building an actual project as opposed to doing exercises presented plenty of
