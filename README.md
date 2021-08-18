@@ -1,7 +1,7 @@
 # Bluebird Blackjack
 
 --Please play on either Firefox or Chrome. Safari has issues that can't be
-resolved for now!--
+resolved for now! With Firefox please check that autoplay is enabled.--
 
 A simple blackjack game with a virtual live music experience. Styled according
 to a vintage Raj/colonial era look but musically evocative of surf and early
@@ -329,6 +329,11 @@ who tried it, those flaws were now "giving character".
 
 - No Safari support, whether on mobile or desktop. The music won't play and
   the animation has problems too.
+
+- Despite trying a few approaches with different event handlers, the
+  browser requirement that user interactivity must precede any playing of
+  audio couldn't be met. This may be due to the button and form containing it
+  redirect to another html page.
 
 - Often, a Blackjack result is given despite the sum not adding up to 21. This
   is despite an if-else structure that should only return a Blackjack result in
