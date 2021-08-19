@@ -341,6 +341,12 @@ who tried it, those flaws were now "giving character".
   audio couldn't be met in evry circumstance. This may be due to the button
   and form containing it redirect to another html page.
 
+- The code could have been much better if the author had used returned values
+  from the functions, but at the time of writing the game the concept was not so
+  well understood. Since then, some more understanding has developed, however it
+  was decided to leave the game as-is for the time being, until more time is
+  available.
+
 - Often, a Blackjack result is given despite the sum not adding up to 21. This
   is despite an if-else structure that should only return a Blackjack result in
   that strict occasion. There was a bug where two comparison systems were
