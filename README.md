@@ -75,8 +75,8 @@ those early games had plenty of character despite the limited substance.
 
 - Another small button allows for an option to mute the music.
 
-- The user is prompted to enter their name, if the user isn't interested in
-  that, the name "Player" is assigned to them.
+- The user is prompted to enter their name, if the user doesn't, the name
+  "Player" is assigned to them.
 
 - 10 pounds is added to the pot by both Player and opponent, and the game
   starts.
@@ -92,6 +92,9 @@ those early games had plenty of character despite the limited substance.
   to the sum below. The latest card is displayed visually above.
 
 - The player has the option to bet a fixed amount, increasing the pot.
+
+- The player has the option to change opponents without
+  affecting the gameplay.
 
 ## Features
 
@@ -155,7 +158,7 @@ at the Bluebird, Player!
 
 - HTML CSS and Javascript
 - VS Code
-- GSAP library
+- GSAP library (for intro animation only)
 - Google fonts
 - Cards from https://all-free-download.com
 - Opponent images from Google Search
@@ -163,7 +166,7 @@ at the Bluebird, Player!
 ## Testing
 
 Initially, the project was to be done using jQuery as a framework. Vanilla JS
-was intimidating to the author due to its verbosity and finicky nature. After
+is intimidating to the author due to its verbosity and finicky nature. After
 thinking about it for some time, taking into account the purpose of the whole
 exercise, which is to learn JS, the author decided to write the game in JS and
 not use any frameworks beyond the initial credit sequence.
@@ -198,14 +201,14 @@ to Netlify. The steps followed were:
 
 - The game, having been developed with Firefox as the live server browser, had
   immediate issues with autoplay of audio. The game had an onload="audio()"
-  function, which is very bad internet manners. The author solved it by creating
+  function, which caused numerous issues. The author solved it by creating
   a dialogue that the user then had to click, which then passed the autoplay
   wall. This did not resolve in Safari, so the text was included to check the
   browser autoplay settings in the dialogue.
 
 - The speed of the animation rendering was painfully slow. The author solved
   this with the help of the Netlify support staff, who sent the author the
-  Squoosh app, which allows for image size reduction to an almost shocking
+  Squoosh app, which allows for image size reduction to a significant
   degree. This helped considerably with the animation.
 
 - The card speed, however, was unfixeable. It may be a function of having the
@@ -214,10 +217,11 @@ to Netlify. The steps followed were:
   but is keeping it in mind.
 
 - The game didn't work well on mobile initially, arranging the elements without
-  too much clutter was a challenge. The start animation also took some time before
-  it fit well enough on a mobile size screen. Initally a very daunting moment,
-  since so much of the game was written up already, until it was realised that
-  a few key CSS properties were all that needed to be manipulated.
+  too much clutter was a challenge. The start animation also took some time
+  before it fit well enough on a mobile size screen. Initally a very daunting
+  moment, since so much of the game was written up already, until it was
+  realised that a few key CSS properties were all that needed to be
+  manipulated.
 
 ### Learning Javascript
 
@@ -281,7 +285,7 @@ this game than the previous week's binge-watching tutorials.
   The takeaway was that, when GSAP was introduced, it was clear
   what it was needed for and was used for that purpose. In the case of the
   other frameworks, the confusion with JS was the main driving force, and the
-  libraries didn't really seem to help that much.
+  libraries didn't really seem to help that much with gaining any clarity.
 
 - Readable code is important.
 
@@ -329,6 +333,8 @@ who tried it, those flaws were now "giving character".
 
 - No Safari support, whether on mobile or desktop. The music won't play and
   the animation has problems too.
+
+- With some versions of Firefox, autoplay has to be enabled manually.
 
 - Despite trying a few approaches with different event handlers, the
   browser requirement that user interactivity must precede any playing of
