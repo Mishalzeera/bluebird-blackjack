@@ -44,7 +44,7 @@ const opponentPlayers = [
     skill: 3,
     src: "assets/imgs/opponents/lucy.jpg",
     greeting: "assets/audio/voices/american-grt-2.mp3",
-    gloating: "assets/audio/voices/american-gloat-1.wav",
+    gloating: "assets/audio/voices/american-gloat-1.mp3",
     angerfail: "assets/audio/voices/american-anger-1.wav",
   },
   {
