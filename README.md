@@ -4,9 +4,9 @@
 resolved for now! With Firefox please check that autoplay is enabled.--
 
 A simple blackjack game with a virtual live music experience. Styled according
-to a vintage Raj/colonial era look but musically evocative of surf and early
+to a vintage colonial era look but musically evocative of surf and early
 RnB. The game is to entertain casually. The author made the music
-at home on a computer, but the intention was to sound like a live band, warts
+at home on a computer. The intention was to sound like a live band, warts
 and all. The audience sound was pieced together from other recordings. The
 opponent characters are a feature that promotes a lighthearted atmosphere. The
 intention initially was to create a diverse cast of voices, but the decision was
@@ -45,9 +45,6 @@ surf and RnB from the 1960s. The user is also a fan of slightly risque,
 on-the-edge of unPC comedy who doesn't take themselves too seriously. The
 opponent characters are a play on stereotypes. The user will appreciate
 a digital game with a more adult sense of juvenile humour.
-
-The user is the kind of person who doesn't generally play games on their
-phones, and will also play the desktop version in their browser.
 
 ## Bluebird Blackjack offers...
 
@@ -183,8 +180,9 @@ to Netlify. The steps followed were:
 
 - Create a Netlify account. Netlify allows for free hosting and staging
   directly from Github with the added bonus of purchasing and connecting
-  domain names. The "app-friendly" nature of Netlify also appealed
-  to the author.
+  domain names. The "app-friendly" nature of Netlify appealed
+  to the author, who had some experiences of GitHub Pages not working and
+  causing (temporary) problems with a repository.
 
 - Select the relevant Github repository from a dropdown menu. The repository
   was initially set to private (the repo was initialised from the desktop
@@ -208,8 +206,9 @@ to Netlify. The steps followed were:
 
 - The speed of the animation rendering was painfully slow. The author solved
   this with the help of the Netlify support staff, who sent the author the
-  Squoosh app, which allows for image size reduction to a significant
-  degree. This helped considerably with the animation.
+  Squoosh app (www.squoosh.app - highly recommended), which allows for image
+  size reduction to a significant degree. This helped considerably with
+  the animation.
 
 - The card speed, however, was unfixeable. It may be a function of having the
   cards array in a buffer state at all times, which may be solved by having some
@@ -244,7 +243,9 @@ this game than the previous week's binge-watching tutorials.
   Having functions that encapsulated sections of game flow made it easier to
   control how the game worked. Since this only became clear as progress was
   made, the implementation of that is far from perfect. However, in subsequent
-  JS projects, things will be a lot simpler.
+  JS projects, things will be a lot simpler. Also, the purpose of returning
+  values from a function wasn't clear to the author until the game was finished,
+  and this caused the game to have clumsy logic in places.
 
 - Frameworks and libraries are more helpful the more JS is understood.
 

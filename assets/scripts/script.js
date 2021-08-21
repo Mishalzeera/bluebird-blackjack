@@ -12,7 +12,7 @@ stayButton.addEventListener("click", stayPlay);
 const opponentButton = document.querySelector("#opp-change");
 opponentButton.addEventListener("click", changeOpponent);
 
-// The Opponents object list! Lots of fun creating them, each has their own greeting, gloat and angry sound
+// The Opponents object list - each has their own greeting, gloat and angry sound
 
 const opponentPlayers = [
   {
@@ -65,7 +65,7 @@ const opponentPlayers = [
   },
 ];
 
-// Global variables declared here. Code was started with the aim of having as few globals as possible. That didn't go so well.
+// Global variables declared here. Code was started with the aim of having as few globals as possible. 
 
 const music = new Audio("assets/music/the-show.mp3");
 let newOpponent;
@@ -204,7 +204,7 @@ function initGame() {
   let opponentImgDiv = document.querySelector("#opp");
   opponentImgDiv.src = newOpponent.src;
 
-  // Shows a skill level, which reflects in their higher probability of winning (TODO)
+  // Shows a skill level
 
   let opponentSkillDiv = document.querySelector("#skill");
   opponentSkillDiv.textContent =
@@ -249,7 +249,7 @@ function startGame() {
   playBlackJack();
 }
 
-// Random selection of card from cards array (in another script, check the scripts folder, otherwise it gets a bit overwhelming)
+// Random selection of card from cards array (in another script, check the scripts folder)
 
 function playBlackJack() {
   firstCard = cards[Math.floor(Math.random() * cards.length)];
@@ -262,7 +262,7 @@ function playBlackJack() {
   cardimg1.src = firstCard.src;
   cardimg2.src = secondCard.src;
 
-  // altValue is a way of handling the Ace issue, where "Aces are counted as 11 when this would not make the total more than 21". There must be a better syntax for this.
+  // altValue is a way of handling the Ace issue, where "Aces are counted as 11 when this would not make the total more than 21". 
 
   if (
     firstCard.altValue === 11 &&
@@ -361,7 +361,7 @@ function placeBet() {
   let currentPot = document.querySelector("#pot");
   currentPot.textContent = parseInt(currentPot.textContent) + betAmount * 2;
 
-  //      Lets Player know that she is at 0 by turning red, its the last round before the manager kicks you out, also removes the functionality of the Bet button temporarily as the Bluebird Casino sadly no longer offers credit.
+  //      Lets Player know that she is at 0 by turning red, its the last round before the manager kicks you out, also removes the functionality of the Bet button..
 
   if (currentCredit.textContent === "0") {
     currentCredit.style.color = "red";
@@ -410,11 +410,11 @@ function changeOpponent() {
   newOpponent =
     opponentPlayers[Math.floor(Math.random() * opponentPlayers.length)];
 
-  // Shows their ridiculous faces
+  // Shows their faces
 
   let opponentImgDiv = document.querySelector("#opp");
   opponentImgDiv.src = newOpponent.src;
-  // Shows a skill level, which reflects in their higher probability of winning
+  // Shows a skill level
 
   let opponentSkillDiv = document.querySelector("#skill");
   opponentSkillDiv.textContent =
@@ -515,7 +515,7 @@ function refreshAll() {
   startButton.addEventListener("click", startGame);
 }
 
-// Logic for the opponent game behind the scenes - which is actually the same as the Player game in that it uses random cards - the only hard coded part is that I tried to average out when a person would choose to get another card or stay. To be implemented
+// Logic for the opponent game behind the scenes - which is actually the same as the Player game in that it uses random cards - the only hard coded part is that I tried to average out when a person would choose to get another card or stay.
 
 function opponentGame() {
   let firstCardOpponent = cards[Math.floor(Math.random() * cards.length)];
